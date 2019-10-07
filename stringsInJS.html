@@ -8,8 +8,12 @@
 </head>
 <body>
   <script>
-    let string = "The revolution will not be televised.";
-    console.log(string);
+    <button>Press me</button>
+    const button = document.querySelector('button');
+    button.onclick = function() {
+      let name = prompt('What is your name?');
+      alert('Hello ' + name + ', nice to meet you!');
+    }
     
     
     
