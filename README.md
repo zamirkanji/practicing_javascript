@@ -81,5 +81,40 @@ Strings In Javascript:
   - If you have a numeric value that you want to convert to a string but not change otherwise, or a string variable that you want to convert to a number but not change otherwise, you can use the following two constructs: 
     - The Number object converst anything passed to it into a number, if it can. 
       - let myString = "123";
-        let myNum = Number(myString);
-        typeof myNum;
+      - let myNum = Number(myString);
+      - typeof myNum;
+    - Conversely, every number has a method called toString() that converts it to the equivalent string. 
+      - let myNum = 123;
+      - let myString = myNum.toString();
+      - typeof myString; 
+  - If a use enters a number into a form's text field, it's a string. However, if you want to add this number to something, you'll need it to be a number, so you could pass it through Number() to handle this. 
+6. String Methos and Properties 
+  - String .length; returns the length of the string
+    - let txt = "Zamir";
+    - let sln = txt.length;
+  - Finding a String in a String 
+    - indexOf() method returns the index of (the position of) the first ocurrence of a specified text in a string
+      - let str = "Please locate where 'locate' occurs!"
+      - let pos = str.indexOf("locate"); // should output 7
+    - lastIndexOf() method returns the index of the last occurance of a specified text in a string. 
+      - let str = "Please locate where 'locate' occurs!";
+      - let posLast = str.lastIndexOf("locate"); // should output 21 
+    - Both indexOf(), and lastIndexOf() return -1 if the text is not found. 
+    - Both methods accept a second parameter as the starting position for the search. 
+      - let str = "Please locate where 'locate' occurs!";
+      - let pos = str.indexOf("locate", 15);
+    - The lastIndexOf() methods searched backwards (from the end to the beginning), meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of the string. 
+      - let str = "Please locate where 'locate' occurs!";
+      - let pos = str.lastIndexOf("locate", 15); // 7 
+  - Searching for a String in a String 
+    - The search() method searches a string for a specified value and returns the position of the match. 
+      - let str = "Please locate where 'location' occurs!";
+      - let pos = str.search("locate");
+  - The two methos, indexOf() and search() are NOT equal. 
+    - The search() method cannot take a second start position argument 
+    - The indexOf() method cannot take powerful search values (regular expressions)
+  - Extracting String Parts 
+    - slice(start, end) extracts a part of a string and returns the extracted part in a new string. 
+
+    - substring(start, end)
+    - substr(start, length)
