@@ -115,6 +115,56 @@ Strings In Javascript:
     - The indexOf() method cannot take powerful search values (regular expressions)
   - Extracting String Parts 
     - slice(start, end) extracts a part of a string and returns the extracted part in a new string. 
+        - let str = "Apple, Banana, Kiwi";
+        - let res = str.slice(7, 13); //cuts out "Banana"
+      - End number is NOT included
+      - If a parameter is negative, the position is counted from the end of the string. 
+      - If you omit the second parameter, the method will slice out the rest of the string
+      - Or, counting from the end (one parameter and negative)
+    - substring(start, end) is similar to slice(), the difference is that substring() cannot accept negative indexes. 
+    - substr(start, length) is similar to slice(), the difference being that the second parameter specifies the length of the extracted part. 
+      - let str = "Apple, Banana, Kiwi"; 
+      - let res = str.substr(7, 6); //output is Banana
+  - Replacing String Content 
+    - The replace() method replaces a specified value with another value in a string. 
+      - str = "Please visit Microsoft!";
+      - let n = str.replace("Microsoft", "W3Schools");
+    - The method does not change the strng it is called on. It returns a new string. 
+    - The replace() method replaces only the FIRST match; 
+    - The method is case sensitive
+    - To replace case insensitive, use a regular expression with an /i flag(insensitive).
+    - To replace all matches, use a regular expression with a /g flag (global match)
+      - let n = str.replace(/Microsoft/g, "W3Schools");
+  - Converting to Upper and Lower Case 
+    - A string is converted to upper case with toUpperCase()
+      - let text1 = "Hello World!"; //String 
+      - let text2 = text1.toUpperCase(); //text2 is text1 converted to upper (HELLO WORLD!)
+    - A string is converted to upper case wth toLowerCase()
+  - The concat() method
+    - concat() joins two or more strings
+      - let text1 = "Hello";
+      - let text2 = "World";
+      - let text3 = text1.concat(" ", text2);
+    - The concat() method can be used instead of the plus operator. These two lines do the same:
+      - "Hello" + " " + "World!"
+      - "Hello".concat(" ", "World!")
+    - NOTE: All string methods return a new string. They don't modify the original string. Formally said - Strings are immutable - Strings cannot be changed, only replaced. 
+  - String.trim() method removes whitespace from both sides of a string
+    - let str = "        Hello World!        "
+    - alert(str.trim());
+  - The charAt() Method
+    - The charAt() method returns the character at a specified index (position) in a string
+      - let str = "HELLO WORLD";
+      - str.charAt(0); //returns H
+  - Converting a String to an Array 
+    - A string can be converted to an array with the split() method
+      - let txt = "a,b,c,d,e";  // String
+      - txt.split(",");  // Split on commas
+      - txt.split(" ");  // Split on spaces
+      - txt.split("|");  // Split on pipe
+    - If the seperator is omitted, the returned array will contain the whole string index [0]. 
+    - If the seperator is "", the returned array will be an array of single characters
+      - let text = "Hello";  // String
+      - txt.split("");  // Split in characters
+        - // Output ["H", "e", "l", "l", "o"] (5)
 
-    - substring(start, end)
-    - substr(start, length)
