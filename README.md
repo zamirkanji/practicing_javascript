@@ -167,4 +167,85 @@ Strings In Javascript:
       - let text = "Hello";  // String
       - txt.split("");  // Split in characters
         - // Output ["H", "e", "l", "l", "o"] (5)
-
+7. Comparisons 
+      - a > b, a < b
+      - a >= b, a <= b
+      - a == b 
+      - let a = b;
+      - a != b
+  - Boolean is the result - like all other operators, a comparison returns a value. In this case, the value is a boolean. 
+    - true - means "yes", "correct" or "the truth".
+    - false - means "no", "wrong" or "not the truth".
+      - alert(2 > 1); //true (correct)
+      - alert(2 == 1); //false (wrong)
+      - alert(2 != 1); //true (correct)
+    - A comparison result can be assigned to a variable, just like any value
+      - let result = 5 > 4; //assign the result of the comparison 
+      - alert(result); //true 
+  - String comparison 
+    - To see whether a string is greater than another, JS uses the so-called "dictionary" or "lexicographical" order. (i.e, strings are compared letter-by-letter)
+      - alert('Z' > 'A'); // true
+      - alert('Glow' > 'Glee'); //true 
+      - alert('Bee' > 'Be'); //true   
+        - The algorithm to compare the two strings:
+          1. Compare the first character of both strings. 
+          2. If the first character from the first string is greater (or less) than the other string's, then the first string is greater (or less) than the second. We're done. 
+          3. Otherwise, if both strings' first char are the same, compare the second char the same way. 
+          4. Repeat until the end of either string. 
+          5. If both strings end at the same length, then they are equal. Otherwise, the longer string is greater. 
+      - "2" > "12 // true (first char of 2 is greater than the first char of 1)
+  - Comparison of different types
+    - When comparing values of different types, JS converts the values to numbers. 
+      - alert('2' > 1); //true, string '2' becomes a number
+      - alert('01' == 1); //true, '01' becomes the number 1
+    - For boolean values, "true" becomes 1 and "false" becomes 0.
+      - alert(true == 1); //true 
+      - alert(false == 0); //true 
+  - Strict Equality
+    - A regular equality check == has a problem, it cannot differentiate 0 from "false";
+      - alert(0 == false); //true
+      - alert('' == false); //true 
+    - This happens because operands of different types are converted to numbers by the equality operator == . An empty string, just like false, becomes a zero. 
+    - What if we DO want to differentiate 0 from false?
+      - A strict equality operator === checks the equality without type conversion. 
+      - If "a" and "b" are of different types, then a === b immediately returns "false" without an attempt to convert them. 
+        - alert(0 === false); //false (bc types are different)
+      - There is also a "strict non-equality" operator !== analogous to != (leaves less room for errors)
+  - Comparison with null and undefined 
+    - There's a non-intuitive behavior when "null" or "undefined" are compared to other values. 
+    - For a strict equality check ===
+    - These values are different, because each of them is a different type. 
+      - alert(null === undefined); //false
+    - For a non-strict check == 
+    - Special rule: These two are a "Sweet Couple" - they equal each other (in the sense of ==), but not any other value
+      - alert (null == undefined); // true 
+8. Logical Operators 
+  - There are three logical operators in JS
+    - || (OR)
+    - && (AND)
+    - ! (NOT)
+      - Although they are called "logical", they can be applied to values of any type, not only boolean. Their result can also be of any type. 
+  - || (OR) operator is represented with two vertical line symbols
+    - result = a || b;
+    - In classical programming, the logical OR is meant to manipulate boolean values only. If any of its arguments are "true", it returns "true", otherwise it returns "false"
+    - In JS, the operator is trickier and more powerful. 
+      - Four possible logical combbinations:
+        - alert(true || true); //true 
+        - alert(false || true); //true 
+        - alert(true || false); //true 
+        - alert(false || false); //false  
+      - If operand is not a boolean, it is converted to boolean for the evaluation. 
+        - if (1 || 0) { //works just like if (true || false)
+          alert ('truthy!');
+        }
+      - Most of the time OR || is used in an "if" statement to test if any of the given conditions is "true"
+        - let hour = 9;
+        - if (hour < 10 || hour > 18) {
+          alert("The office is closed.");
+        }
+      - We can pass more conditions: 
+        - let hour = 12; 
+        - let isWeekend = true; 
+        - if (hour < 10 || hour > 18 || isWeekend) {
+          alert("The office is closed."); //its the weekend
+        }
