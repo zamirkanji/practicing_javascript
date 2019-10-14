@@ -249,3 +249,10 @@ Strings In Javascript:
         - if (hour < 10 || hour > 18 || isWeekend) {
           alert("The office is closed."); //its the weekend
         }
+  - OR || finds the first truthy value 
+    - In other words, a chain of OR "||" returns the first truthy value or the last one if no truthy value is found.
+      - alert( 1 || 0 ); // 1 (1 is truthy)
+      - alert( true || 'no matter what' ); // (true is truthy)
+      - alert( null || 1 ); // 1 (1 is the first truthy value)
+      - alert( null || 0 || 1 ); // 1 (the first truthy value)
+      - alert( undefined || null || 0 ); // 0 (all falsy, returns the last value)

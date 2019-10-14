@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Function Scope Example</title>
+</head>
+<body>
+    <script>
+        let x = 1; //global scope (outside the function)
+        function a() {
+          let y = 2;
+          output(y + x);
+        }
+        function b() {
+          let z = 3;
+          output(z + x);
+        }
+        function output(value) {
+          let para = document.createElement('p');
+          document.body.appendChild(para);
+          para.textContent = 'Value: ' + value;
+        }
+
+        function myBigFunction() {
+          let myValue = 1;
+
+          subFunction1(myValue);
+          subFunction2(myValue);
+          subFunction3(myValue);
+        }
+        
+        function subFunction1() {
+          console.log("");
+        }
+        function subFunction2() {
+          console.log("");
+        }
+        function subFunction3() {
+          console.log("");
+        }
+
+      </script>
+</body>
+</html>
