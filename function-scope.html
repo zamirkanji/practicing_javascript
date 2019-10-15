@@ -23,6 +23,7 @@
           para.textContent = 'Value: ' + value;
         }
 
+
         function myBigFunction() {
           let myValue = 1;
 
@@ -40,6 +41,65 @@
         function subFunction3() {
           console.log("");
         }
+
+
+
+
+        //local variable 
+        function showMessage(name) {
+          let message = ("Hi everyone! My name is " + name);
+          console.log(message);
+        }
+        showMessage("Zamir");
+        showMessage();
+      //alert(message); // local variable - will show error
+        
+
+        //outer variables (global)
+        let userName = "Zamir"; //outer (outside the function - global) variable 
+        function showMessageTwo() {
+          let message = "Hello, " + userName;
+          console.log(message);
+        }
+        showMessageTwo();
+
+        //functions have full access to outer variables, can modify it
+        let uN = "Zam";
+        function messageShow() {
+          uN = "Zain"; //changed the outer variable
+          let message = "Hello, " + uN;
+          console.log(message);
+        }
+        console.log(uN);
+        messageShow();
+        console.log(uN);
+
+
+        //PARAMETERS in functions
+        function learningParameters(from, text) { //arugments(parameters): from, text
+          console.log(from + ": " + text);
+        }
+        learningParameters("Ann", "Hello!"); // Ann: Hello! (*)
+        learningParameters("Ann", "What's up?"); // Ann: What's up? (**)
+
+        //Parameters Two!
+        function favoriteAnimal(pet) {
+          console.log("There is " + x + " " + pet + " in my living room!");
+        }
+        favoriteAnimal("Kai"); //when calling the function, the parameter is whatever you put in, the parameter when creating the function is just a placeholder(could be named anything)
+
+        //Parameters Three
+        function parametersThree(from, text) {
+          from = "*" + from + "*"; // make "from" look nicer
+          console.log(from + ": " + text);
+        }
+        let from = "Ann";
+        parametersThree(from, "Hello"); //*Ann*: Hello
+        // the value of "from" is the same, the function modified a local copy 
+        console.log( from ); // Ann 
+
+        
+
 
       </script>
 </body>
