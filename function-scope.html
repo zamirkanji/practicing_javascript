@@ -133,6 +133,56 @@
         console.log(result);
 
 
+
+
+
+
+
+        //RETURN EXAMPLE
+
+        //food prices 
+        let beer_cost = 6.25;
+        let burger_cost = 4.75;
+        let pop_cost = 3.00;
+
+        //user's money
+        let account_balance = 15.75;
+        //check account balance
+        function checkBalance(amt) {
+          if (account_balance - amt >= 0) {
+                return "You have enough in your account!";
+                return true;
+          } else {
+                return "INSUFFICIENT FUNDS";
+                return false;
+          }
+        }
+
+        //drink beer
+        function drink_beer() {
+          if (checkBalance(beer_cost /* "amt parameter" */)) {
+            account_balance = account_balance - beer_cost;
+            console.log("Enjoy your beer!");
+          }
+          console.log("\tBalance: ", account_balance.toFixed(2));
+        }
+        //eat burger
+        function eat_burger() {
+          account_balance = account_balance - burger_cost;
+          console.log(account_balance);
+        }
+        //drink pop
+        function drink_pop() {
+          account_balance = account_balance - pop_cost;
+          console.log(account_balance);
+        }
+        //visit the carnival, eat, and drink
+        function visitCarnival(mList) {
+          for (let i=0, num = mList.length; i <num; i++) {
+            mList[i]();
+          }
+        }
+      visitCarnival([drink_beer]);
       </script>
 </body>
 </html>
