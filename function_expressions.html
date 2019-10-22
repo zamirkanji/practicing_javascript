@@ -21,7 +21,7 @@
     let sayHi = function() {
       console.log("Hi");
     };
-    let func = sayHi;
+    let func = sayHi; // can assign entire function expression to a variable 
 
 
     //callback functions
@@ -64,7 +64,7 @@
     }
 
     //expression
-    let sum = function(a, b) {
+    let sumTwo = function(a, b) {
       return a + b;
     };
 
@@ -80,24 +80,22 @@
 
     // For example, a global Function Declaration is visible in the whole script, no matter where it is.
     
-    sayHi("John"); // Hello, John
+    // sayHi("John"); // Hello, John
 
-    function sayHi(name) {
-      alert( `Hello, ${name}` );
-    }
+    // function sayHi(name) {
+    //   alert(`Hello, ${name}`);
+    // }
 
 
     // vs. 
 
-    sayHi("John"); // error!
+    // sayHi("John"); // error!
 
-    let sayHi = function(name) {  // (*) no magic any more
-      alert( `Hello, ${name}` );
-      };
+    // let sayHi = function(name) {  // (*) no magic any more
+    // alert( `Hello, ${name}` );
+    // };
 
-  // Arrow functions 
-      // in replace of function expressions
-    let func = (arg1, arg2, arg3) => expression
+ 
 
     
     
